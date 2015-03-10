@@ -59,7 +59,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 end
 ```
 
-##### In User.rb
+##### In user.rb
 ```ruby
 devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable,
@@ -78,7 +78,7 @@ More information about Github's [Auth Hash](https://github.com/intridea/omniauth
 
 ##### Generate a migration
 ```ruby
-class AddProviderToUsers < ActiveRecord::Migration
+class AddProviderAndUidToUsers < ActiveRecord::Migration
   def change
     add_column :users, :provider, :string
     add_column :users, :uid, :string
