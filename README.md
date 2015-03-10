@@ -3,18 +3,17 @@
 This is a very simple rails app that sets "Log in with Github" for a rails app. It uses a scaffolded model for todos Devise/Omniauth for authentication.
 
 ### Links
-- [devise](https://github.com/plataformatec/devise)
-- [omniauth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview)
-- [omniauth-github](https://github.com/intridea/omniauth-github)
-- [Multiple strategies](http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/)
+* [devise](https://github.com/plataformatec/devise)
+* [omniauth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview)
+* [omniauth-github](https://github.com/intridea/omniauth-github)
+* [Multiple strategies](http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/)
 
-### Basic [Devise](https://github.com/plataformatec/devise)
-rails new NAME
-Gemfile add: gem 'devise'
-bundle install
-rails generate devise:install (follow the instructions in terminal)
-rails generate devise MODEL (commonly User)
-rails generate devise:views (to customize the views)
+### Basic Devise
+* Gemfile add: gem 'devise'
+* bundle install
+* rails generate devise:install (follow the instructions in terminal)
+* rails generate devise MODEL (commonly User)
+* rails generate devise:views (to customize the views)
 
 #### Devise helpers
 ```ruby
@@ -23,9 +22,9 @@ user_signed_in?
 current_user
 ```
 
-### Use [Omniauth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview) to login with [Github](https://github.com/intridea/omniauth-github)
-Authorize your app on [github](https://github.com/settings/applications/new)
-Authorization callback url
+### Use Omniauth to login with Github
+* Authorize your app on github [here](https://github.com/settings/applications/new)
+* Authorization callback url
 
 ##### In Gemfile
 gem 'omniauth'
