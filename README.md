@@ -30,11 +30,10 @@ current_user
 
 ##### Use Omniauth to login with Github
 * Authorize your app on github [here](https://github.com/settings/applications/new)
-* Authorization callback url
+* Set GITHUB_APP_ID and GITHUB_APP_SECRET in .profile/.zshrc/etc
 
 ##### In config/intializers/devise.rb
 ```ruby
-# don't forget to set these in your .profile or something similar
 config.omniauth :github, ENV['GITHUB_APP_ID'], ENV['GITHUB_APP_SECRET'], scope: 'user,public_repo'
 ```
 ##### In routes.rb
