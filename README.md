@@ -45,7 +45,7 @@ devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_call
 
 ```ruby
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
-  def facebook
+  def github
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
