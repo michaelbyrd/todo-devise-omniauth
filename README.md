@@ -1,10 +1,10 @@
-# Scaffolded Todo list with Devise and Github authentication using OmniAuth
+# Todo
 
-This is a very simple rails app that sets "Log in with Github" for a rails app.
+This is a very simple rails app that sets "Log in with Github" for a rails app. It uses a scaffolded model for todos Devise/Omniauth for authentication.
 
 ### Links
-- [Devise](https://github.com/plataformatec/devise)
-- [Omniauth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview)
+- [devise](https://github.com/plataformatec/devise)
+- [omniauth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview)
 - [omniauth-github](https://github.com/intridea/omniauth-github)
 - [Multiple strategies](http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/)
 
