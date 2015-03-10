@@ -6,7 +6,7 @@ This is a very simple rails app that allows users to log in with Github. It uses
 * [devise](https://github.com/plataformatec/devise)
 * [omniauth](https://github.com/plataformatec/devise/wiki/OmniAuth:-Overview)
 * [omniauth-github](https://github.com/intridea/omniauth-github)
-* [Multiple strategies](http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/)
+* [multiple strategies example](http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/)
 
 
 ##### In Gemfile
