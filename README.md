@@ -1,4 +1,4 @@
-# Todo
+# Devise + Omniauth
 
 This is a very simple rails app that allows users to log in with Github. It uses a scaffolded model for todos and Devise/Omniauth for authentication.
 
