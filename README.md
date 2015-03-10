@@ -74,7 +74,7 @@ def self.from_omniauth(auth)
   end
 end
 ```
-you can look at the other information that github sends in its [Auth Hash](https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema)
+More information about Github's [Auth Hash](https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema)
 
 ##### Generate a migration
 ```ruby
