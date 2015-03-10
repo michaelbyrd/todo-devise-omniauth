@@ -26,22 +26,51 @@ This is a very simple rails app that sets "Log in with Github" for a rails app.
 - Authorization callback url
 - Gemfile add: gem 'omniauth', gem 'omniauth-github'
 
-- in config/intializers/devise.rb
+##### config/intializers/devise.rb
   - config.omniauth :github, ENV['GITHUB_APP_ID'], ENV['GITHUB_APP_SECRET'], scope: 'user,public_repo'
 
+##### routes.rb
 - devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-- create omniauth_callbacks_controller.rb
+##### create omniauth_callbacks_controller.rb
 
-- in User.rb
+```html
+class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  def facebook
+    # You need to implement the method below in your model (e.g. app/models/user.rb)
+    @user = User.from_omniauth(request.env["omniauth.auth"])
+
+    if @user.persisted?
+      sign_in_and_redirect @user, :event => :authentication #this will throw if @user is not activated
+      set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?
+    else
+      session["devise.facebook_data"] = request.env["omniauth.auth"]
+      redirect_to new_user_registration_url
+    end
+  end
+end
+```
+
+##### User.rb
   - :omniauthable, :omniauth_providers => [:github]
-  - def self.from_omniauth(auth)
+```ruby
+def self.from_omniauth(auth)
+  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    user.email = auth.info.email
+    user.password = Devise.friendly_token[0,20]
+    # user.name = auth.info.name   # assuming the user model has a name
+    # user.image = auth.info.image # assuming the user model has an image
+    # you can look at the other information that github sends [here](https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema)
+  end
+end
+```
 
-- generate a migration
-  - add_column :users, :provider, :string
-  - add_column :users, :uid, :string
-
-
-### On Heroku
-- heroku config:set GITHUB_APP_ID =
-- heroku config:set GITHUB_APP_SECRET =
+##### generate a migration
+```ruby
+class AddProviderToUsers < ActiveRecord::Migration
+  def change
+    add_column :users, :provider, :string
+    add_column :users, :uid, :string
+  end
+end
+```
