@@ -9,26 +9,26 @@ This is a very simple rails app that allows users to log in with Github. It uses
 * [Multiple strategies](http://sourcey.com/rails-4-omniauth-using-devise-with-twitter-facebook-and-linkedin/)
 
 
-##### In Gemfile
+#### In Gemfile
 ```ruby
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-github'
 ```
 
-### Basic Devise
+##### Basic Devise
 * rails generate devise:install (follow the instructions in terminal)
 * rails generate devise MODEL (commonly User)
 * rails generate devise:views (to customize the views)
 
-#### Devise helpers
+##### Devise helpers
 ```ruby
 before_action :authenticate_user!
 user_signed_in?
 current_user
 ```
 
-### Use Omniauth to login with Github
+##### Use Omniauth to login with Github
 * Authorize your app on github [here](https://github.com/settings/applications/new)
 * Authorization callback url
 
