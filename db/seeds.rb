@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Todo.create(task: "Add Devise to a rails app", complete: false)
+Todo.create(task: "Add omniauth with Github to a rails app", complete: false)
