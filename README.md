@@ -27,15 +27,19 @@ current_user
 * Authorization callback url
 
 ##### In Gemfile
+```ruby
 gem 'omniauth'
 gem 'omniauth-github'
+```
 
 ##### In config/intializers/devise.rb
+```ruby
 config.omniauth :github, ENV['GITHUB_APP_ID'], ENV['GITHUB_APP_SECRET'], scope: 'user,public_repo'
-
+```
 ##### In routes.rb
+```ruby
 devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-
+```
 ##### Create omniauth_callbacks_controller.rb
 
 ```ruby
@@ -67,7 +71,7 @@ def self.from_omniauth(auth)
   end
 end
 ```
-you can look at the other information that github sends [here](https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema)
+you can look at the other information that github sends in its [Auth Hash](https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema)
 
 ##### Generate a migration
 ```ruby
