@@ -40,7 +40,7 @@ config.omniauth :github, ENV['GITHUB_APP_ID'], ENV['GITHUB_APP_SECRET'], scope: 
 ```ruby
 devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 ```
-##### Create omniauth_callbacks_controller.rb
+##### Create app/controllers/users/omniauth_callbacks_controller.rb
 
 ```ruby
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
